@@ -1,0 +1,49 @@
+=============== Mar 23, 2022 (PDT) ===============
+11:54:30.080997 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+11:54:30.137611 db@open opening
+11:54:30.138180 version@stat F·[] S·0B[] Sc·[]
+11:54:30.158044 db@janitor F·2 G·0
+11:54:30.158091 db@open done T·20.452792ms
+14:00:31.202265 db@close closing
+14:00:31.205302 db@close done T·3.040084ms
+=============== Mar 23, 2022 (PDT) ===============
+14:02:52.802866 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+14:02:52.803631 version@stat F·[] S·0B[] Sc·[]
+14:02:52.803661 db@open opening
+14:02:52.803730 journal@recovery F·1
+14:02:52.803828 journal@recovery recovering @1
+14:02:52.824066 memdb@flush created L0@2 N·5 S·460B "c\x00\x00..\x00\x00\x00,v4":"onumber,v3"
+14:02:52.824402 version@stat F·[1] S·460B[460B] Sc·[0.25]
+14:02:52.904221 db@janitor F·3 G·0
+14:02:52.904268 db@open done T·100.595458ms
+14:21:17.597287 db@close closing
+14:21:17.600585 db@close done T·3.273083ms
+=============== Mar 23, 2022 (PDT) ===============
+16:24:41.649245 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:24:41.650071 version@stat F·[1] S·460B[460B] Sc·[0.25]
+16:24:41.650107 db@open opening
+16:24:41.650178 journal@recovery F·1
+16:24:41.650293 journal@recovery recovering @3
+16:24:41.650546 version@stat F·[1] S·460B[460B] Sc·[0.25]
+16:24:41.729536 db@janitor F·3 G·0
+16:24:41.729610 db@open done T·79.490834ms
+16:27:07.670427 db@close closing
+16:27:07.673573 db@close done T·3.115625ms
+=============== Mar 23, 2022 (PDT) ===============
+16:39:39.384950 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:39:39.385548 version@stat F·[1] S·460B[460B] Sc·[0.25]
+16:39:39.385577 db@open opening
+16:39:39.385642 journal@recovery F·1
+16:39:39.385740 journal@recovery recovering @5
+16:39:39.385978 version@stat F·[1] S·460B[460B] Sc·[0.25]
+16:39:39.468057 db@janitor F·3 G·0
+16:39:39.468114 db@open done T·82.526416ms
+=============== Mar 23, 2022 (PDT) ===============
+16:39:58.740275 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:39:58.740460 version@stat F·[1] S·460B[460B] Sc·[0.25]
+16:39:58.740485 db@open opening
+16:39:58.740546 journal@recovery F·1
+16:39:58.740647 journal@recovery recovering @7
+16:39:58.741117 version@stat F·[1] S·460B[460B] Sc·[0.25]
+16:39:58.877818 db@janitor F·3 G·0
+16:39:58.877923 db@open done T·137.429083ms
