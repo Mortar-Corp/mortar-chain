@@ -2,8 +2,11 @@ package server
 
 import (
 	"fmt"
+	"github.com/0xPolygon/polygon-edge/command/server/config"
 	"math"
 	"net"
+
+	"github.com/0xPolygon/polygon-edge/network/common"
 
 	"github.com/0xPolygon/polygon-edge/chain"
 	"github.com/0xPolygon/polygon-edge/command/helper"
@@ -16,7 +19,7 @@ import (
 func (p *serverParams) initConfigFromFile() error {
 	var parseErr error
 
-	if p.rawConfig, parseErr = readConfigFile(p.configPath); parseErr != nil {
+	if p.rawConfig, parseErr = config.ReadConfigFile(p.configPath); parseErr != nil {
 		return parseErr
 	}
 
@@ -36,13 +39,32 @@ func (p *serverParams) initRawParams() error {
 		return err
 	}
 
+	if err := p.initDataDirLocation(); err != nil {
+		return err
+	}
+
 	if p.isDevMode {
 		p.initDevMode()
 	}
 
 	p.initPeerLimits()
+	p.initLogFileLocation()
 
 	return p.initAddresses()
+}
+
+func (p *serverParams) initDataDirLocation() error {
+	if p.rawConfig.DataDir == "" {
+		return fmt.Errorf("data directory not defined")
+	}
+
+	return nil
+}
+
+func (p *serverParams) initLogFileLocation() {
+	if p.isLogFileLocationSet() {
+		p.logFileLocation = p.rawConfig.LogFilePath
+	}
 }
 
 func (p *serverParams) initBlockGasTarget() error {
@@ -237,7 +259,7 @@ func (p *serverParams) initDNSAddress() error {
 
 	var parseErr error
 
-	if p.dnsAddress, parseErr = network.MultiAddrFromDNS(
+	if p.dnsAddress, parseErr = common.MultiAddrFromDNS(
 		p.rawConfig.Network.DNSAddr, p.libp2pAddress.Port,
 	); parseErr != nil {
 		return parseErr
