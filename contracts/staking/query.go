@@ -12,9 +12,8 @@ import (
 )
 
 var (
-	// staking contract address
-	// AddrStakingContract = types.StringToAddress("1001")
-	AddrStakingContract = types.StringToAddress("0xf18ea5448E30da7eB11a18D0a9986ec792dC6a22")
+	// Staking contract address – minimum 10,000 BRCK
+	AddrStakingContract = types.StringToAddress("0xF7AE1EFC4e3F28844f5BeE13d750ADdE71BD92C6")
 
 
 	// Gas limit used when querying the validator set
@@ -50,7 +49,7 @@ type TxQueryHandler interface {
 	Apply(*types.Transaction) (*runtime.ExecutionResult, error)
 	GetNonce(types.Address) uint64
 }
-
+ 
 func QueryValidators(t TxQueryHandler, from types.Address) ([]types.Address, error) {
 	method, ok := abis.StakingABI.Methods["validators"]
 	if !ok {
